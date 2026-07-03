@@ -10,14 +10,15 @@
 
     <div class="app-container">
         
-        <!-- Üst Bar / Logo ve Abonelik Alanı -->
+        <!-- Üst Bar / Logo ve Dinamik Kullanıcı Durumu -->
         <header class="main-header">
             <div class="logo-area">
                 <span class="logo-icon">🔒</span>
                 <h1>SİBER BİLİNÇ</h1>
             </div>
-            <div class="auth-action">
-                <button class="subscribe-btn" onclick="openSubscribeModal()">Abone Ol</button>
+            <!-- Dinamik Abonelik Alanı (JS ile kontrol edilecek) -->
+            <div class="auth-action" id="authBox">
+                <button class="subscribe-btn" onclick="toggleAuthModal()">Sisteme Abone Ol</button>
             </div>
         </header>
 
@@ -27,6 +28,7 @@
             <button class="menu-btn" onclick="switchTab('hacked')">Hacklendiğinizi Nasıl Anlarsınız?</button>
             <button class="menu-btn" onclick="switchTab('protection')">Koruyucu Yazılımlar</button>
             <button class="menu-btn" onclick="switchTab('leaks')">Hacklenmiş İsimler Arşivi</button>
+            <button class="menu-btn" onclick="switchTab('forum')">Siber Duvar (4chan Tarzı)</button>
         </nav>
 
         <!-- İçerik Alanı -->
@@ -40,17 +42,15 @@
                 </div>
 
                 <div class="main-grid">
-                    <!-- Sol Taraf: Makaleler -->
                     <div class="articles-column">
                         <div class="card bg-glow">
                             <span class="badge badge-blue">Yapay Zeka & IoT</span>
                             <h3>IoT Cihazları Hakkında Bilinen 6 Yanlış Efsane</h3>
-                            <p>Akıllı televizyonlar, IP kameralar, robot süpürgeler ve ev otomasyon sistemleri gerçekten güvenli mi? Ağınıza bağlı bu cihazların siber korsanlar tarafından nasıl zombi botnet ağlarına dönüştürülebileceğini ve ev ağınıza sızmak için birer açık kapı haline gelebileceğini detaylarıyla analiz ediyoruz.</p>
+                            <p>Akıllı televizyonlar, IP kameralar, robot süpürgeler ve ev otomasyon sistemleri gerçekten güvenli mi? Ağınıza bağlı bu cihazların siber korsanlar tarafından nasıl zombi botnet ağlarına dönüştürülebileceğini detaylarıyla analiz ediyoruz.</p>
                             <span class="meta-date">Siber Bilinç Analiz Ekibi • 2026</span>
                         </div>
                     </div>
 
-                    <!-- Sağ Taraf: Yan Panel Girişi -->
                     <div class="info-sidebar">
                         <div class="card sidebar-card">
                             <h4>Siber Bilinç Portalı</h4>
@@ -65,60 +65,21 @@
             <!-- 2. BÖLÜM: HACKLENDİĞİNİZİ NASIL ANLARSINIZ -->
             <section id="hacked" class="content-section">
                 <h2>Hacklendiğinizi Nasıl Anlarsınız?</h2>
-                <p class="section-desc">Siber saldırganlar genellikle sisteme sızdıktan sonra izlerini gizlemeye çalışırlar. Ancak cihazınızda veya hesaplarınızda aşağıdaki sıra dışı belirtilerden bir veya birkaçını gözlemliyorsanız, bir siber saldırının kurbanı olmuş olabilirsiniz:</p>
-                
+                <p class="section-desc">Cihazınızda veya hesaplarınızda aşağıdaki sıra dışı belirtilerden bir veya birkaçını gözlemliyorsanız, bir siber saldırının kurbanı olmuş olabilirsiniz:</p>
                 <ul class="warning-list">
-                    <li>
-                        <strong>Aşırı Performans Kaybı ve Kontrolsüz Kaynak Tüketimi:</strong> 
-                        Cihazınızda hiçbir ağır uygulama veya oyun açık olmamasına rağmen fanlar son hızda çalışıyor, işlemci (CPU) kullanımı durduk yere %100'e ulaşıyor ve sisteminiz aşırı derecede ısınıyorsa arka planda gizli bir kripto madencilik zararlısı (Cryptojacking) veya veri transferi çalışıyor olabilir.
-                    </li>
-                    <li>
-                        <strong>İtenmeyen Reklamlar ve Kendi Kendine Açılan Pencereler:</strong> 
-                        Tarayıcınızı açtığınızda varsayılan arama motorunuz izniniz dışında değiştiyse, masaüstünüzde sürekli olarak uygunsuz reklamlar, sahte sistem uyarısı pencereleri veya güncelleme tuzakları beliriyorsa, sisteminize reklam virüsü (Adware) bulaşmış demektir.
-                    </li>
-                    <li>
-                        <strong>Hesap Aktivite Geçmişindeki Şüpheli Değişiklikler:</strong> 
-                        E-posta kutunuzun "Gönderilenler" klasöründe sizin yazmadığınız mesajlar bulunuyorsa ya da sosyal medya hesaplarınızdan yakınlarınıza şüpheli linkler, para talepleri veya çekiliş bağlantıları gidiyorsa hesap oturum kimliğiniz ele geçirilmiş olabilir.
-                    </li>
-                    <li>
-                        <strong>Sistem Güvenlik Yazılımlarının Ansızın Devre Dışı Kalması:</strong> 
-                        Bilgisayarınızda yüklü olan antivirüs programı veya yerleşik güvenlik duvarları kendi kendine kapanıyor ve siz manuel olarak açmaya çalıştığınızda hata kodları veriyorsa, gelişmiş bir malware sistem yetkilerini ele geçirerek savunmanızı felç etmiş demektir.
-                    </li>
+                    <li><strong>Aşırı Performans Kaybı ve Kontrolsüz Kaynak Tüketimi:</strong> İşlemci (CPU) kullanımı durduk yere %100'e ulaşıyorsa arka planda kripto madencilik zararlısı çalışıyor olabilir.</li>
+                    <li><strong>İstenmeyen Reklamlar ve Kendi Kendine Açılan Pencereler:</strong> Masaüstünüzde sürekli reklamlar beliriyorsa reklam virüsü (Adware) bulaşmış demektir.</li>
                 </ul>
             </section>
 
             <!-- 3. BÖLÜM: KORUYUCU YAZILIMLAR -->
             <section id="protection" class="content-section">
                 <h2>Virüslerden Koruyacak Uygulamalar ve Yazılımlar</h2>
-                <p class="section-desc">Bilgisayarlarımızı ve akıllı telefonlarımızı dijital birer kaleye dönüştürmek için katmanlı bir savunma stratejisi uygulamamız gerekir. Cihazınızda mutlaka bulunması gereken temel yazılımlar:</p>
-
                 <div class="software-grid">
-                    <div class="card">
-                        <span class="badge badge-cyan">Erişim Engelleme</span>
-                        <h3>Antivirüs ve EDR Yazılımları</h3>
-                        <p>Sisteminizdeki tüm dosyaları ve indirmeleri sürekli tarar. Yapay zeka tabanlı davranışsal analiz yöntemleri sayesinde, sisteminize sızmaya çalışan trojan, solucan veya fidye yazılımlarını aktif hale gelemeden karantinaya alırlar.</p>
-                        <div class="example-tag">Örnek: Bitdefender, Kaspersky, Windows Defender</div>
-                    </div>
-
                     <div class="card">
                         <span class="badge badge-cyan">Ağ Güvenliği</span>
                         <h3>Gelişmiş Güvenlik Duvarı (Firewall)</h3>
-                        <p>Güvenlik duvarları, bilgisayarınız ile internet arasındaki tüm veri trafiğini denetleyen dijital gümrük kapılarıdır. Kötü niyetli kişilerin ağınızdaki açık portları kullanarak sisteminize sızmasını kesin olarak engeller.</p>
-                        <div class="example-tag">Örnek: ZoneAlarm, Windows Gelişmiş Duvarı</div>
-                    </div>
-
-                    <div class="card">
-                        <span class="badge badge-cyan">Kimlik Koruması</span>
-                        <h3>Güvenli Şifre Yöneticileri</h3>
-                        <p>Tüm dijital hesaplarınız için tahmin edilmesi imkansız şifreler üretirler. Bu şifreleri askeri düzeyde şifrelenmiş (AES-256) dijital bir kasada saklarlar, böylece sizin sadece tek bir ana şifreyi hatırlamanız yeterli olur.</p>
-                        <div class="example-tag">Örnek: Bitwarden, KeePass</div>
-                    </div>
-
-                    <div class="card">
-                        <span class="badge badge-cyan">Veri Şifreleme</span>
-                        <h3>Sanal Özel Ağlar (VPN)</h3>
-                        <p>Özellikle kafe, otel veya havalimanı gibi şifresiz halka açık Wi-Fi ağlarına bağlandığınızda internet trafiğinizi şifreli bir tünel içerisinden akıtarak verilerinizin havadan çalınmasını (MitM saldırılarını) önler.</p>
-                        <div class="example-tag">Örnek: Mullvad, ProtonVPN</div>
+                        <p>Kötü niyetli kişilerin ağınızdaki açık portları kullanarak sisteminize sızmasını kesin olarak engeller.</p>
                     </div>
                 </div>
             </section>
@@ -126,77 +87,57 @@
             <!-- 4. BÖLÜM: HACKLENMİŞ İSİMLER ARŞİVİ -->
             <section id="leaks" class="content-section">
                 <h2>Hacklenmiş İsimler ve Küresel Veri Sızıntıları Arşivi</h2>
-                <p class="section-desc">Bu arşiv, geçmişten günümüze internet dünyasını sarsan gerçek siber saldırılardan elde edilen kullanıcı verilerinin kronolojik bir dökümüdür. Dijital dünyada sızan verilerin siber korsanlar tarafından nasıl kullanılabileceğini açıkça göstermektedir.</p>
-                
                 <div class="leaks-container">
                     <div class="leak-item">
                         <h4>2002 - ABD Savunma Bakanlığı (DoD) Ağ Sızmaları</h4>
-                        <p>İnternetin yaygınlaşmasıyla askeri ağlara yönelik sızma girişimleri hız kazandı. Sistem yöneticilerinin şifrelerini boş bıraktığı ortaya çıktı.</p>
                         <div class="data-row"><strong>İsim:</strong> Jonathan Abernathy | <strong>E-posta:</strong> jabernathy@army.mil | <strong>Şifre:</strong> [Boş Bırakılmış Admin]</div>
-                        <div class="data-row"><strong>İsim:</strong> Robert Vance | <strong>E-posta:</strong> rvance@navy.mil | <strong>Şifre:</strong> password123</div>
                     </div>
+                </div>
+            </section>
 
-                    <div class="leak-item">
-                        <h4>2003 - Monster.com Erken Dönem İş Arama İhlali</h4>
-                        <p>Dönemin en popüler iş bulma sitesinde truva atları ve kimlik avı yöntemleriyle binlerce iş arayanın giriş verileri çalındı.</p>
-                        <div class="data-row"><strong>İsim:</strong> David Miller | <strong>E-posta:</strong> dmiller2003@yahoo.com | <strong>Şifre:</strong> david1979</div>
-                        <div class="data-row"><strong>İsim:</strong> Sarah Jenkins | <strong>E-posta:</strong> s.jenkins@hotmail.com | <strong>Şifre:</strong> sunshine</div>
+            <!-- 5. BÖLÜM: 4CHAN TARZI ANONİM PAYLAŞIM ALANI (YENİ) -->
+            <section id="forum" class="content-section">
+                <h2>Siber Duvar // Anonim İstihbarat Akışı</h2>
+                <p class="section-desc">Burası 4chan mantığıyla çalışan, sisteme abone olmuş kullanıcıların anonim veya rumuzla serbestçe siber bulgularını, kod parçacıklarını paylaştığı panodur.</p>
+                
+                <!-- Paylaşım Yapma Formu -->
+                <div class="forum-post-box card">
+                    <h3>Yeni Başlık Aç / Paylaşım Yap</h3>
+                    <div id="forumClosedMessage" style="color: #ef4444; font-weight: bold; margin-bottom: 10px;">
+                        ⚠️ Paylaşım yapabilmek için sağ üst köşeden sisteme "Abone Olmanız" gerekmektedir!
                     </div>
+                    <div id="forumFormInputs" style="display: none;">
+                        <input type="text" id="postTitle" placeholder="Konu Başlığı (Örn: Yeni Trojan Varyantı Bulundu)" class="forum-input">
+                        <textarea id="postContent" placeholder="Paylaşmak istediğiniz metin veya kod satırları..." class="forum-input forum-textarea"></textarea>
+                        <div class="form-footer">
+                            <label><input type="checkbox" id="postAnonymous"> Anonim (Anonymous) olarak gönder</label>
+                            <button class="subscribe-btn" onclick="submitNewPost()" style="background-color: #3b82f6; box-shadow: none;">Duvara Yaz</button>
+                        </div>
+                    </div>
+                </div>
 
-                    <div class="leak-item">
-                        <h4>2004 - AOL (America Online) İçeriden Sızdırma Skandalı</h4>
-                        <p>Bir AOL çalışanının, 92 milyon kullanıcının e-posta adresini spamlere satmak üzere çalmasıyla gerçekleşen büyük bir ihlaldir.</p>
-                        <div class="data-row"><strong>İsim:</strong> Michael Thompson | <strong>E-posta:</strong> mthompson@aol.com | <strong>Şifre:</strong> mustang67</div>
-                        <div class="data-row"><strong>İsim:</strong> Emily Rodriguez | <strong>E-posta:</strong> emily_r@aol.com | <strong>Şifre:</strong> ilovemycat</div>
-                    </div>
-
-                    <div class="leak-item">
-                        <h4>2005 - CardSystems Solutions Kredi Kartı Sızıntısı</h4>
-                        <p>Siber korsanların SQL Injection yöntemiyle 40 milyondan fazla kredi kartı sahibinin verilerini ele geçirdiği finansal felakettir.</p>
-                        <div class="data-row"><strong>İsim:</strong> Christopher Martinez | <strong>E-posta:</strong> cmartinez@gmail.com | <strong>Şifre:</strong> [Kredi Kartı Hash: 4532********1102]</div>
-                        <div class="data-row"><strong>İsim:</strong> Amanda White | <strong>E-posta:</strong> amanda_w@outlook.com | <strong>Şifre:</strong> amanda05</div>
-                    </div>
-
-                    <div class="leak-item">
-                        <h4>2006 - TJX Companies Mağazacılık Ağı İhlali</h4>
-                        <p>Saldırganların zayıf Wi-Fi şifreleme protokollerini (WEP) kırarak 45 milyondan fazla müşterinin verilerini internet karaborsasına sızdırmasıdır.</p>
-                        <div class="data-row"><strong>İsim:</strong> Matthew Garcia | <strong>E-posta:</strong> m.garcia@verizon.net | <strong>Şifre:</strong> garcia2006</div>
-                        <div class="data-row"><strong>İsim:</strong> Jessica Taylor | <strong>E-posta:</strong> jess.taylor@comcast.net | <strong>Şifre:</strong> secret123</div>
-                    </div>
-
-                    <div class="leak-item">
-                        <h4>2007 - Monster.com İkinci Büyük Veri Tabanı Saldırısı</h4>
-                        <p>Botnet ağlarıyla sisteme sızan hackerlar, 1.6 milyon kullanıcının ev adreslerini ve giriş kimliklerini ele geçirdi.</p>
-                        <div class="data-row"><strong>İsim:</strong> Daniel Anderson | <strong>E-posta:</strong> d.anderson@monsteruser.com | <strong>Şifre:</strong> letmein1</div>
-                        <div class="data-row"><strong>İsim:</strong> Ashley Thomas | <strong>E-posta:</strong> ashley_t@gmail.com | <strong>Şifre:</strong> 01021985</div>
-                    </div>
-
-                    <div class="leak-item">
-                        <h4>2008 - Heartland Payment Systems Finansal İhlali</h4>
-                        <p>Ödeme sistemlerine yerleştirilen casus yazılımlarla, 130 milyondan fazla kart bilgisi canlı olarak ağdan çalındı.</p>
-                        <div class="data-row"><strong>İsim:</strong> James Jackson | <strong>E-posta:</strong> j.jackson@heartlandpay.com | <strong>Şifre:</strong> [MD5 Hash: 8f9a2c3b4e...]</div>
-                        <div class="data-row"><strong>İsim:</strong> Megan Harris | <strong>E-posta:</strong> mharris@corporate.com | <strong>Şifre:</strong> harris2008</div>
-                    </div>
-
-                    <div class="leak-item">
-                        <h4>2009 - RockYou Veri Tabanı Sızıntısı</h4>
-                        <p>32 milyon kullanıcının şifresi düz metin olarak sızdırıldı. Bugün kaba kuvvet testlerinde kullanılan dünyaca ünlü rockyou.txt buradan doğmuştur.</p>
-                        <div class="data-row"><strong>İsim:</strong> Kevin Martin | <strong>E-posta:</strong> kmartin@rockyouapp.com | <strong>Şifre:</strong> 123456</div>
-                        <div class="data-row"><strong>İsim:</strong> Rachel Clark | <strong>E-posta:</strong> rachel_clark@yahoo.com | <strong>Şifre:</strong> qwerty</div>
-                    </div>
-
-                    <div class="leak-item">
-                        <h4>2010 - Gawker Media SQL Injection İhlali</h4>
-                        <p>Gawker medya ağı hacklendi. 1.3 milyon kullanıcının şifresi zayıf algoritmalardan dolayı hackerlarca dakikalar içinde çözüldü.</p>
-                        <div class="data-row"><strong>İsim:</strong> Brian Lewis | <strong>E-posta:</strong> b.lewis@gawker.com | <strong>Şifre:</strong> brianlewis1</div>
-                        <div class="data-row"><strong>İsim:</strong> Elizabeth Robinson | <strong>E-posta:</strong> erobinson@media.com | <strong>Şifre:</strong> monkey</div>
-                    </div>
+                <!-- Gönderilerin Listeleneceği Alan -->
+                <div id="forumFeed" class="leaks-container" style="margin-top: 25px;">
+                    <!-- JS ile doldurulacak -->
                 </div>
             </section>
 
         </main>
 
-        <!-- Footer -->
+        <!-- Abonelik Giriş Penceresi (Modal Pop-up) -->
+        <div id="authModal" class="modal-overlay">
+            <div class="modal-content card">
+                <h3>Siber Bilinç Sistemine Abone Ol</h3>
+                <p>Abonelik tamamen ücretsizdir. Bir kullanıcı adı ve şifre belirleyerek siber duvarda paylaşım yapma yetkisi kazanın.</p>
+                <input type="text" id="regUser" placeholder="Rumuz / Kullanıcı Adı" class="forum-input">
+                <input type="password" id="regPass" placeholder="Güvenli Şifre" class="forum-input">
+                <div style="display: flex; gap: 10px; margin-top: 15px;">
+                    <button class="subscribe-btn" onclick="registerUser()">Kayıt Ol & Abone Ol</button>
+                    <button class="subscribe-btn" onclick="toggleAuthModal()" style="background-color: #4b5563; box-shadow: none;">Kapat</button>
+                </div>
+            </div>
+        </div>
+
         <footer class="app-footer">
             <p>&copy; 2026 Siber Bilinç Projesi - Tüm Hakları Saklıdır.</p>
         </footer>
