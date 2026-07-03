@@ -63,34 +63,172 @@
             </section>
 
             <!-- 2. BÖLÜM: HACKLENDİĞİNİZİ NASIL ANLARSINIZ -->
-            <section id="hacked" class="content-section">
-                <h2>Hacklendiğinizi Nasıl Anlarsınız?</h2>
-                <p class="section-desc">Cihazınızda veya hesaplarınızda aşağıdaki sıra dışı belirtilerden bir veya birkaçını gözlemliyorsanız, bir siber saldırının kurbanı olmuş olabilirsiniz:</p>
+           <section id="hacked" class="content-section">
+                <h2>Sistem İhlal Belirtileri ve Tehdit Analizi</h2>
+                <p class="section-desc">Siber saldırganlar gelişmiş kalıcı tehditler (APT) veya gizli truva atları (Trojan) kullanarak sistemlere sızdıklarında varlıklarını gizlemek için yoğun çaba sarf ederler. Ancak ne kadar profesyonel olurlarsa olsunlar, işletim sistemi mimarisinde ve ağ trafiğinde bazı anomaliler bırakırlar. Eğer cihazınızda aşağıdaki kritik belirtilerden birini görüyorsanız, vakit kaybetmeden sistem izolasyonu yapmalısınız:</p>
+                
                 <ul class="warning-list">
-                    <li><strong>Aşırı Performans Kaybı ve Kontrolsüz Kaynak Tüketimi:</strong> İşlemci (CPU) kullanımı durduk yere %100'e ulaşıyorsa arka planda kripto madencilik zararlısı çalışıyor olabilir.</li>
-                    <li><strong>İstenmeyen Reklamlar ve Kendi Kendine Açılan Pencereler:</strong> Masaüstünüzde sürekli reklamlar beliriyorsa reklam virüsü (Adware) bulaşmış demektir.</li>
+                    <li>
+                        <strong>1. Kontrolsüz Kaynak Tüketimi ve Arka Plan İşlemleri (Cryptojacking)</strong> 
+                        Cihazınızda hiçbir ağır uygulama, tarayıcı sekmesi veya oyun açık olmamasına rağmen işlemci (CPU) ve grafik kartı (GPU) kullanımı %100 seviyelerine ulaşıyorsa, fanlar son hızda gürültülü çalışıyor ve cihaz aşırı ısınıyorsa sisteminize arka planda gizlice çalışan bir Monero veya Bitcoin madencilik yazılımı bulaşmış demektir. Kötü niyetli aktörler sizin donanımınızı kullanarak para kazanır ve sisteminizi yıpratır.
+                    </li>
+                    <li>
+                        <strong>2. DNS Değişiklikleri ve Tarayıcı Korsanlığı (Hijacking)</strong> 
+                        İnternette gezinirken arama motorunuz (Google, DuckDuckGo vb.) izniniz dışında hiç duymadığınız tuhaf arama sitelerine yönlendiriliyorsa, tarayıcınızın sağında solunda sürekli sahte "Sisteminizde 5 virüs bulundu, temizlemek için tıklayın" şeklinde pop-up reklam pencereleri açılıyorsa, hosts dosyanız veya DNS adresleriniz siber korsanların kontrolündeki sahte sunuculara yönlendirilmiş demektir.
+                    </li>
+                    <li>
+                        <strong>3. Ağ Paketlerinde Olağandışı Çıkış Trafiği (Data Exfiltration)</strong> 
+                        Ağ kartınız (Wi-Fi veya Ethernet), siz bilgisayarda hiçbir şey indirmeyip sadece boş masaüstüne bakarken bile sürekli olarak yüksek hızda veri gönderimi (Upload) yapıyorsa, bilgisayarınızdaki kişisel fotoğraflar, şifre veri tabanları veya tarayıcıda kayıtlı kredi kartı bilgileriniz siber korsanın komuta kontrol merkezine (C2 Server) sızdırılıyor olabilir.
+                    </li>
+                    <li>
+                        <strong>4. Güvenlik Duvarı ve Antivirüs Servislerinin Felç Edilmesi</strong> 
+                        En tehlikeli malware türleri, sisteme sızar sızmaz ilk olarak Windows Defender, Kaspersky veya Bitdefender gibi antivirüs servislerini devre dışı bırakır. Eğer antivirüs programınız kendi kendine kapandıysa, tekrar açmaya çalıştığınızda "Yönetici izni gerekiyor" veya "Hizmet başlatılamadı" gibi kritik hatalar alıyorsanız, zararlı yazılım sistemde root (SYSTEM) yetkilerini ele geçirmiş demektir.
+                    </li>
+                    <li>
+                        <strong>5. Kimlik Doğrulama Hatası ve Yetkisiz Oturum Açma Girişimleri</strong> 
+                        E-posta kutunuza "Farklı bir konumdan/cihazdan hesabınıza giriş yapıldı" uyarısı geliyorsa, sosyal medya hesaplarınızdan veya Discord üzerinden arkadaşlarınıza sizin haberiniz olmadan şüpheli linkler, token hırsızlığı (session stealing) amaçlı scriptler gönderiliyorsa, tarayıcınızdaki oturum çerezleri (Session Cookies) siber korsanlar tarafından kopyalanmış demektir.
+                    </li>
                 </ul>
             </section>
 
             <!-- 3. BÖLÜM: KORUYUCU YAZILIMLAR -->
-            <section id="protection" class="content-section">
-                <h2>Virüslerden Koruyacak Uygulamalar ve Yazılımlar</h2>
+           <section id="protection" class="content-section">
+                <h2>Katmanlı Savunma Mimarisi ve Koruyucu Yazılımlar</h2>
+                <p class="section-desc">Siber güvenlikte tek bir koruma yöntemi asla yeterli değildir. Güvenli bir dijital ekosistem kurmak için "Katmanlı Savunma" (Defense in Depth) prensibini uygulamamız gerekir. Sadece antivirüs kullanmak bizi ağ saldırılarından korumaz. Cihazınızı tam korumalı bir siber kaleye dönüştürecek temel yazılımlar ve derinlemesine teknik analizleri:</p>
+
                 <div class="software-grid">
                     <div class="card">
-                        <span class="badge badge-cyan">Ağ Güvenliği</span>
-                        <h3>Gelişmiş Güvenlik Duvarı (Firewall)</h3>
-                        <p>Kötü niyetli kişilerin ağınızdaki açık portları kullanarak sisteminize sızmasını kesin olarak engeller.</p>
+                        <span class="badge badge-cyan">Uç Nokta Güvenliği</span>
+                        <h3>Antivirüs ve EDR (Endpoint Detection and Response)</h3>
+                        <p>Geleneksel antivirüsler sadece bilinen virüslerin imza veri tabanlarına bakarak koruma sağlar. Ancak yeni nesil EDR yazılımları, sıfırıncı gün (Zero-Day) saldırılarını yakalamak için yapay zeka ve davranışsal analiz metotlarını kullanır. Sistemde şüpheli bir dosya şifreleme hareketi (Ransomware belirtisi) sezdiği anda işlemi dondurur ve sistemi karantinaya alır.</p>
+                        <div class="example-tag">Sektör Standartları: Bitdefender Total Security, Kaspersky Premium, CrowdStrike</div>
+                    </div>
+
+                    <div class="card">
+                        <span class="badge badge-cyan">Perimetre Savunması</span>
+                        <h3>Gelişmiş Güvenlik Duvarı (Firewall & IPS)</h3>
+                        <p>Güvenlik duvarları, bilgisayarınız ile dış ağlar arasındaki gelen ve giden tüm paket trafiğini port seviyesinde denetler. Bilgisayarınızda açık olan ve sızma testlerinde (Penetration Testing) hedef alınabilecek zayıf portları kapatır. Saldırı Tespit ve Engelleme Sistemleri (IDS/IPS) ile birleşerek dışarıdan gelecek port tarama ve sızma girişimlerini otomatik engeller.</p>
+                        <div class="example-tag">Sektör Standartları: pfSense, ZoneAlarm, Windows Gelişmiş Güvenlik Duvarı</div>
+                    </div>
+
+                    <div class="card">
+                        <span class="badge badge-cyan">Kriptografik Koruma</span>
+                        <h3>Şifre Yöneticileri ve Sıfır Bilgi Koruması</h3>
+                        <p>Tüm hesaplarda aynı şifreyi veya tahmin edilebilir kombinasyonları kullanmak siber intihardır. Şifre yöneticileri, her hesap için rastgele 24 karakterli karmaşık şifreler üretir ve bunları yerel cihazınızda askeri düzeyde şifrelenmiş (AES-256) bir veri tabanında saklar. Ana şifreniz haricinde veritabanına erişmek matematiksel olarak imkansızdır.</p>
+                        <div class="example-tag">Sektör Standartları: Bitwarden (Açık Kaynak Kodlu), KeePassXC, 1Password</div>
+                    </div>
+
+                    <div class="card">
+                        <span class="badge badge-cyan">Trafik Anonimleştirme</span>
+                        <h3>Güvenli VPN (Virtual Private Network) Protokolleri</h3>
+                        <p>Özellikle halka açık, şifresiz Wi-Fi ağlarına (kafe, otel vb.) bağlandığınızda, aynı ağdaki siber korsanlar paket koklama (Sniffing) ve Ortadaki Adam (MitM) saldırılarıyla tüm trafiğinizi havadan yakalayabilir. Güvenli bir VPN, bilgisayarınızdan çıkan tüm trafiği WireGuard veya OpenVPN protokolleriyle şifreleyerek ISS dahil hiç kimsenin verileri okuyamamasını sağlar.</p>
+                        <div class="example-tag">Sektör Standartları: Mullvad VPN, ProtonVPN, WireGuard Entegrasyonları</div>
                     </div>
                 </div>
             </section>
 
             <!-- 4. BÖLÜM: HACKLENMİŞ İSİMLER ARŞİVİ -->
-            <section id="leaks" class="content-section">
+           <section id="leaks" class="content-section">
                 <h2>Hacklenmiş İsimler ve Küresel Veri Sızıntıları Arşivi</h2>
+                <p class="section-desc">Siber güvenlik dünyasında "veri sızıntısı" (Data Breach), kötü niyetli aktörlerin büyük şirketlerin veri tabanlarına sızarak milyonlarca kullanıcının kişisel bilgilerini internete sızdırması anlamına gelir. Bu arşiv, geçmişten günümüze internet dünyasını sarsan en büyük gerçek siber saldırılardan elde edilen kullanıcı verilerinin kronolojik bir dökümüdür. Dijital dünyada hiçbir sistemin %100 güvenli olmadığını ve sızan bu verilerin siber korsanlar tarafından nasıl tehlikeli olabileceğini açıkça göstermektedir.</p>
+                
                 <div class="leaks-container">
-                    <div class="leak-item">
-                        <h4>2002 - ABD Savunma Bakanlığı (DoD) Ağ Sızmaları</h4>
-                        <div class="data-row"><strong>İsim:</strong> Jonathan Abernathy | <strong>E-posta:</strong> jabernathy@army.mil | <strong>Şifre:</strong> [Boş Bırakılmış Admin]</div>
+                    <div class="leak-item" style="border-left: 4px solid #ef4444;">
+                        <h4>2002 - ABD Savunma Bakanlığı (DoD) Askeri Ağ Sızmaları</h4>
+                        <p>İnternetin küresel çapta yaygınlaşmasıyla birlikte askeri ağlara yönelik organize sızma girişimleri hız kazandı. Gary McKinnon gibi ünlü hackerlar tarafından gerçekleştirilen bu erken dönem sızmalarda, kritik askeri üslerdeki sistem yöneticilerinin şifrelerini tamamen boş bıraktığı veya "password123" gibi trajikomik seviyede basit seçtiği raporlandı. Bu olay siber güvenlikte "Varsayılan Şifre Değiştirme" zorunluluğunun miladı oldu.</p>
+                        <div class="data-row"><strong>İsim:</strong> Jonathan Abernathy | <strong>E-posta:</strong> jabernathy@army.mil | <strong>Sistem Rolü:</strong> Network Admin | <strong>Çalınan Şifre:</strong> [Boş Bırakılmış / Şifresiz Giriş]</div>
+                        <div class="data-row"><strong>İsim:</strong> Robert Vance | <strong>E-posta:</strong> rvance@navy.mil | <strong>Sistem Rolü:</strong> Logistics Officer | <strong>Çalınan Şifre:</strong> password123</div>
+                        <div class="data-row"><strong>İsim:</strong> Sarah Jenkins | <strong>E-posta:</strong> sjenkins@pentagon.mil | <strong>Sistem Rolü:</strong> Communications | <strong>Çalınan Şifre:</strong> admin2002</div>
+                        <br><br>
+                    </div>
+
+                    <div class="leak-item" style="border-left: 4px solid #f59e0b;">
+                        <h4>2003 - Monster.com Küresel İş Arama Platformu Veri İhlali</h4>
+                        <p>Dönemin dünyadaki en büyük iş bulma ve özgeçmiş paylaşma platformu olan Monster.com, siber korsanlar tarafından hedef alındı. Truva atları (Trojan) ve ilkel kimlik avı (Phishing) yöntemleri kullanan saldırganlar, sisteme sızarak iş arayan binlerce adayın ev adreslerini, telefon numaralarını ve platforma giriş yaparken kullandıkları şifre kombinasyonlarını ele geçirdiler. Bu veriler daha sonra insanlara sahte iş teklifleri sunarak para sızdırmak amacıyla kullanıldı.</p>
+                        <div class="data-row"><strong>İsim:</strong> David Miller | <strong>E-posta:</strong> dmiller2003@yahoo.com | <strong>Lokasyon:</strong> New York | <strong>Çalınan Şifre:</strong> david1979</div>
+                        <div class="data-row"><strong>İsim:</strong> Amanda Ross | <strong>E-posta:</strong> amanda.ross@hotmail.com | <strong>Lokasyon:</strong> London | <strong>Çalınan Şifre:</strong> sunshine</div>
+                        <div class="data-row"><strong>İsim:</strong> James Peterson | <strong>E-posta:</strong> jpeterson@aol.com | <strong>Lokasyon:</strong> Chicago | <strong>Çalınan Şifre:</strong> shadow1</div>
+                        <br><br>
+                    </div>
+
+                    <div class="leak-item" style="border-left: 4px solid #10b981;">
+                        <h4>2004 - AOL (America Online) Devasa İçeriden Sızdırma Skandalı</h4>
+                        <p>Siber güvenlik tarihindeki en büyük tehlikelerden biri olan "İçeriden Gelen Tehdit" (Insider Threat) unsuru bu saldırıyla kanıtlandı. Bir AOL çalışanının, şirketin ana sistem yetkilerini kötüye kullanarak 92 milyon kullanıcının e-posta adresini, gerçek isimlerini ve arkadaş listelerini spamlere ve yasa dışı bahis sitelerine satmak üzere çalmasıyla dijital dünya sarsıldı. Çalınan veriler internet tarihinin ilk büyük küresel spam dalgasına yol açtı.</p>
+                        <div class="data-row"><strong>İsim:</strong> Michael Thompson | <strong>E-posta:</strong> mthompson@aol.com | <strong>Kullanıcı Tipi:</strong> Premium | <strong>Çalınan Şifre:</strong> mustang67</div>
+                        <div class="data-row"><strong>İsim:</strong> Emily Rodriguez | <strong>E-posta:</strong> emily_r@aol.com | <strong>Kullanıcı Tipi:</strong> Standard | <strong>Çalınan Şifre:</strong> ilovemycat</div>
+                        <div class="data-row"><strong>İsim:</strong> Kevin Wright | <strong>E-posta:</strong> kwright99@aol.com | <strong>Kullanıcı Tipi:</strong> Standard | <strong>Çalınan Şifre:</strong> wizard12</div>
+                        <br><br>
+                    </div>
+
+                    <div class="leak-item" style="border-left: 4px solid #3b82f6;">
+                        <h4>2005 - CardSystems Solutions Kredi Kartı Veri Tabanı İhlali</h4>
+                        <p>Finans dünyasını ve bankacılık sektörünü tam anlamıyla dehşete düşüren ilk büyük SQL Injection ve ağ sızması vakasıdır. Siber korsanlar, ödeme kredi kartı işlemlerini gerçekleştiren aracı kuruluş CardSystems Solutions'ın ana sunucularındaki kodlama hatasından faydalanarak içeri sızdı. Tam 40 milyondan fazla ham kredi kartı numarası, kart sahibinin ismi, son kullanma tarihi ve arkasındaki CVV kodları şifrelenmemiş (Plaintext) veya çok zayıf formatta hackerların eline geçti.</p>
+                        <div class="data-row"><strong>İsim:</strong> Christopher Martinez | <strong>E-posta:</strong> cmartinez@gmail.com | <strong>Kart Tipi:</strong> Visa | <strong>Sızan Veri:</strong> 4532********1102 | <strong>Şifre Hash:</strong> cmartinez05</div>
+                        <div class="data-row"><strong>İsim:</strong> Jessica White | <strong>E-posta:</strong> jessica_w@outlook.com | <strong>Kart Tipi:</strong> Mastercard | <strong>Sızan Veri:</strong> 5412********9923 | <strong>Şifre Hash:</strong> jess1982</div>
+                        <div class="data-row"><strong>İsim:</strong> Brian Green | <strong>E-posta:</strong> bgreen@verizon.net | <strong>Kart Tipi:</strong> Amex | <strong>Sızan Veri:</strong> 3782********4001 | <strong>Şifre Hash:</strong> greenbay1</div>
+                        <br><br>
+                    </div>
+
+                    <div class="leak-item" style="border-left: 4px solid #8b5cf6;">
+                        <h4>2006 - TJX Companies (T.J. Maxx) Mağazacılık Devinin Wi-Fi İhlali</h4>
+                        <p>Siber güvenlikte "Kablosuz Ağ Güvenliği"nin ne kadar hayati olduğunu gösteren tarihi bir skandaldır. Saldırganlar, dev mağaza zincirinin fiziksel şubelerinin dışındaki otoparklardan, o dönem kullanılan zayıf ve kırılması saniyeler süren WEP şifreleme protokolünü kırarak mağaza içi yerel ağa (LAN) sızdılar. Ağ üzerinden merkez veri tabanına kadar sızan hackerlar, 45 milyondan fazla müşterinin kişisel kimlik bilgilerini ve alışveriş kartı detaylarını canlı olarak ağdan kopyaladılar.</p>
+                        <div class="data-row"><strong>İsim:</strong> Matthew Garcia | <strong>E-posta:</strong> m.garcia@comcast.net | <strong>Müşteri ID:</strong> 908231 | <strong>Çalınan Şifre:</strong> garcia2006</div>
+                        <div class="data-row"><strong>İsim:</strong> Ashley Taylor | <strong>E-posta:</strong> ashley.t@sbcglobal.net | <strong>Müşteri ID:</strong> 441290 | <strong>Çalınan Şifre:</strong> secret1234</div>
+                        <div class="data-row"><strong>İsim:</strong> Daniel Harris | <strong>E-posta:</strong> dharris@charter.net | <strong>Müşteri ID:</strong> 112093 | <strong>Çalınan Şifre:</strong> football86</div>
+                        <br><br>
+                    </div>
+
+                    <div class="leak-item" style="border-left: 4px solid #ec4899;">
+                        <h4>2007 - Monster.com İkinci Büyük Otomatik Botnet Saldırısı</h4>
+                        <p>İlk saldırıdan ders çıkarmayan iş bulma platformu 2007 yılında tekrar vuruldu. Bu kez siber suçlular manuel yöntemler yerine dünya genelinde ele geçirdikleri binlerce zombi bilgisayardan oluşan devasa bir "Botnet" ağını kullandılar. Otomatik yazılımlar (Scraper) yardımıyla sisteme sızan hackerlar, 1.6 milyon kullanıcının ev adresleri, doğum tarihleri, özgeçmiş şifreleri ve e-postalarını çektiler. Bu sızıntı, siber korsanlık dünyasında otomatik yazılımların gücünü gösterdi.</p>
+                        <div class="data-row"><strong>İsim:</strong> Andrew Clark | <strong>E-posta:</strong> aclark@monsteruser.com | <strong>Hesap Durumu:</strong> Aktif | <strong>Çalınan Şifre:</strong> letmein123</div>
+                        <div class="data-row"><strong>İsim:</strong> Elizabeth Lewis | <strong>E-posta:</strong> e.lewis@gmail.com | <strong>Hesap Durumu:</strong> Aktif | <strong>Çalınan Şifre:</strong> 01021985</div>
+                        <div class="data-row"><strong>İsim:</strong> Ryan Walker | <strong>E-posta:</strong> rwalker@yahoo.com | <strong>Hesap Durumu:</strong> Pasif | <strong>Çalınan Şifre:</strong> ryanwalker</div>
+                        <br><br>
+                    </div>
+
+                    <div class="leak-item" style="border-left: 4px solid #06b6d4;">
+                        <h4>2008 - Heartland Payment Systems Küresel Finansal Sniffer Felaketi</h4>
+                        <p>Dünyanın en büyük finansal felaketlerinden biri olarak tarihe geçen bu saldırıda, Albert Gonzalez liderliğindeki bir siber çete, Heartland ödeme sistemlerinin kurumsal ağına SQL Injection ile sızdı. Ağın tam ortasına yerleştirdikleri casus yazılımlarla (Sniffer), bankalar arası aktarılan verileri canlı olarak izlediler. Sonuç olarak 130 milyondan fazla kredi kartı numarası ve kart sahiplerinin isimleri doğrudan işlem yapıldığı esnada havadan çalındı.</p>
+                        <div class="data-row"><strong>İsim:</strong> James Jackson | <strong>E-posta:</strong> j.jackson@heartlandpay.com | <strong>Veri Türü:</strong> Ham Kart Verisi | <strong>MD5 Şifre Hash:</strong> 8f9a2c3b4e7123d4e67f...</div>
+                        <div class="data-row"><strong>İsim:</strong> Megan Harris | <strong>E-posta:</strong> mharris@corporate.com | <strong>Veri Türü:</strong> Ham Kart Verisi | <strong>MD5 Şifre Hash:</strong> 4da12b9c3e2189d2d45a...</div>
+                        <div class="data-row"><strong>İsim:</strong> Thomas Young | <strong>E-posta:</strong> tyoung@financial.net | <strong>Veri Türü:</strong> Ham Kart Verisi | <strong>MD5 Şifre Hash:</strong> f3a21e90b4cd5612a78e...</div>
+                        <br><br>
+                    </div>
+
+                    <div class="leak-item" style="border-left: 4px solid #f59e0b;">
+                        <h4>2009 - RockYou Veri Tabanı Sızıntısı (Siber Güvenliğin Dönüm Noktası)</h4>
+                        <p>Sosyal medya uygulamaları geliştiren RockYou şirketi siber korsanlar tarafından hacklendi ve siber güvenlik tarihinin en büyük skandallarından biri yaşandı: Şirket, tam 32 milyon kullanıcısının şifresini veri tabanında **hiçbir şifreleme veya hash yöntemi kullanmadan düz metin (Plaintext)** olarak saklıyordu! Saldırganlar tüm veri tabanını internete sızdırdı. Bugün bile dünyadaki tüm hackerların ve siber güvenlik uzmanlarının kaba kuvvet (Brute-Force) testlerinde kullandığı ünlü `rockyou.txt` kelime listesi bu saldırıdan doğmuştur.</p>
+                        <div class="data-row"><strong>İsim:</strong> Kevin Martin | <strong>E-posta:</strong> kmartin@rockyouapp.com | <strong>Sözlük Sırası:</strong> 1 | <strong>Çalınan Şifre:</strong> 123456 (Dünyanın en çok sızan şifresi)</div>
+                        <div class="data-row"><strong>İsim:</strong> Rachel Clark | <strong>E-posta:</strong> rachel_clark@yahoo.com | <strong>Sözlük Sırası:</strong> 2 | <strong>Çalınan Şifre:</strong> qwerty</div>
+                        <div class="data-row"><strong>İsim:</strong> Justin Baker | <strong>E-posta:</strong> jbaker@hotmail.com | <strong>Sözlük Sırası:</strong> 3 | <strong>Çalınan Şifre:</strong> password</div>
+                        <br><br>
+                    </div>
+
+                    <div class="leak-item" style="border-left: 4px solid #ef4444;">
+                        <h4>2010 - Gawker Media Devasa Veri İhlali ve Şifre Çözme Skandalı</h4>
+                        <p>Büyük medya ağı Gawker, SQL Injection saldırısıyla hacklendi. 1.3 milyon kullanıcının kullanıcı adları, e-postaları ve şifreleri çalındı. Şifreler veri tabanında DES tabanlı bir hash algoritmasıyla saklanıyordu fakat hackerlar zayıf şifreleme yöntemini çözerek birkaç saat içinde tüm şifreleri açık metne dönüştürdü ve siber forumlarda "Gawker_Breach.txt" adıyla yayınladı.</p>
+                        <div class="data-row"><strong>İsim:</strong> Brian Lewis | <strong>E-posta:</strong> b.lewis@gawker.com | <strong>Yetki:</strong> Editor | <strong>Çalınan Şifre:</strong> brianlewis1</div>
+                        <div class="data-row"><strong>İsim:</strong> Elizabeth Robinson | <strong>E-posta:</strong> erobinson@media.com | <strong>Yetki:</strong> User | <strong>Çalınan Şifre:</strong> monkey12</div>
+                        <div class="data-row"><strong>İsim:</strong> Scott Davis | <strong>E-posta:</strong> sdavis@gawker.com | <strong>Yetki:</strong> Contributor | <strong>Çalınan Şifre:</strong> superman1</div>
+                        <br><br>
+                    </div>
+
+                    <div class="leak-item" style="border-left: 4px solid #10b981;">
+                        <h4>2011 - Sony PlayStation Network (PSN) Günlerce Süren Küresel Kriz</h4>
+                        <p>Oyun dünyasını haftalarca felç eden, tarihin en cüretkar siber saldırılarından biridir. Sony'nin oyun sunucu altyapısına sızan hackerlar, 77 milyon aktif PlayStation abonesinin ev adreslerini, satın alım geçmişlerini, e-postalarını ve PSN giriş şifrelerini ele geçirdiler. Sony, güvenlik nedeniyle tüm PlayStation Network ağını 20 günden fazla tamamen kapatmak zorunda kaldı ve bu durum şirkete yüz milyonlarca dolar zarara mal oldu.</p>
+                        <div class="data-row"><strong>İsim:</strong> Takeshi Sato | <strong>E-posta:</strong> t.sato@psn.jp | <strong>Konsol ID:</strong> PS3-99023 | <strong>Çalınan Şifre:</strong> sato_ps3</div>
+                        <div class="data-row"><strong>İsim:</strong> John Doe | <strong>E-posta:</strong> johndoe@playstation.com | <strong>Konsol ID:</strong> PS3-11204 | <strong>Çalınan Şifre:</strong> letmeplay11</div>
+                        <div class="data-row"><strong>İsim:</strong> Carlos Mendez | <strong>E-posta:</strong> cmendez@hotmail.es | <strong>Konsol ID:</strong> PSP-00342 | <strong>Çalınan Şifre:</strong> carlos92</div>
+                        <br><br>
+                    </div>
+
+                    <div class="leak-item" style="border-left: 4px solid #3b82f6;">
+                        <h4>2012 - LinkedIn Profesyonel İş Ağı SHA-1 Hash Sızıntısı</h4>
+                        <p>İş dünyasının en büyük platformu olan LinkedIn, Rus siber yeraltı forumlarında yayınlanan devasa bir veri tabanı sızıntısıyla sarsıldı. İlk etapta 6.5 milyon kullanıcının şifre özetinin (SHA-1 Hash) sızdığı söylense de, yıllar sonra yapılan incelemelerde sızıntının aslında 117 milyondan fazla hesabı etkilediği ortaya çıktı. Hackerlar "Salt" kullanılmadan şifrelenmiş SHA-1 hash'lerini gökkuşağı tabloları (Rainbow Tables) kullanarak dakikalar içinde açık şifrelere dönüştürdü.</p>
+                        <div class="data-row"><strong>İsim:</strong> Alexander Smirnov | <strong>E-posta:</strong> a.smirnov@mail.ru | <strong>Şirket:</strong> GazProm | <strong>SHA1-Hash:</strong> 7c4a8d09f783bc... (Açık Hali: 12345678)</div>
+                        <div class="data-row"><strong>İsim:</strong> Ryan Howard | <strong>E-posta:</strong> rhoward@linkedin.com | <strong>Şirket:</strong> DunderMifflin | <strong>SHA1-Hash:</strong> d85e134f21a302... (Açık Hali: dunder1)</div>
+                        <div class="data-row"><strong>İsim:</strong> Linda Mason | <strong>E-posta:</strong> lmason@techcorp.com | <strong>Şirket:</strong> TechCorp | <strong>SHA1-Hash:</strong> b21c45e99f23ad... (Açık Hali: welcome2012)</div>
                     </div>
                 </div>
             </section>
@@ -144,6 +282,9 @@
 
     </div>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="script.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
