@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #0b0f19; /* Koyu siber tema arka planı */
+    background-color: #0b0f19;
     color: #e2e8f0;
     display: flex;
     justify-content: center;
@@ -15,35 +15,60 @@ body {
     padding: 20px;
 }
 
+/* Ana Konteyner */
 .app-container {
     width: 100%;
-    max-width: 850px;
+    max-width: 950px;
     background-color: #111827;
     border: 1px solid #1f2937;
     border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
     overflow: hidden;
 }
 
-/* Header */
-header {
-    background: linear-gradient(135deg, #1e1b4b, #311042);
-    padding: 30px;
-    text-align: center;
-    border-bottom: 2px solid #06b6d4; /* Neon mavi detay */
+/* Üst Bar Tasarımı (Siberdinc Esintili) */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    background-color: #0f172a;
+    border-bottom: 1px solid #1f2937;
 }
 
-header h1 {
-    font-size: 2.2rem;
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-icon {
+    font-size: 1.6rem;
+}
+
+.main-header h1 {
+    font-size: 1.6rem;
     color: #06b6d4;
-    letter-spacing: 2px;
-    margin-bottom: 5px;
-    text-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
+    letter-spacing: 1px;
 }
 
-header p {
-    color: #9ca3af;
-    font-size: 1rem;
+/* Yeşil Parlayan Abone Ol Butonu */
+.subscribe-btn {
+    background-color: #10b981;
+    color: #ffffff;
+    border: none;
+    padding: 10px 22px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
+    transition: all 0.3s ease;
+}
+
+.subscribe-btn:hover {
+    background-color: #059669;
+    box-shadow: 0 0 25px rgba(16, 185, 129, 0.7);
 }
 
 /* Navigasyon / Menü */
@@ -58,15 +83,15 @@ header p {
     background: none;
     border: none;
     color: #9ca3af;
-    padding: 15px 10px;
-    font-size: 1rem;
+    padding: 16px 12px;
+    font-size: 0.95rem;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
 }
 
 .menu-btn:hover {
-    background-color: #374151;
+    background-color: #2d3748;
     color: #fff;
 }
 
@@ -75,31 +100,45 @@ header p {
     color: #0b0f19;
 }
 
-/* İçerik Alanı */
+/* İçerik Alanları */
 .content-area {
-    padding: 30px;
-    min-height: 350px;
+    padding: 35px;
+    min-height: 400px;
 }
 
 .content-section {
-    display: none; /* Varsayılan olarak bölümleri gizle */
+    display: none;
 }
 
 .content-section.active {
-    display: block; /* Sadece aktif olanı göster */
-    animation: fadeIn 0.5s ease;
+    display: block;
+    animation: fadeIn 0.4s ease;
 }
 
-h2 {
-    color: #f3f4f6;
-    margin-bottom: 15px;
-    font-size: 1.5rem;
+.welcome-banner h2, h2 {
+    font-size: 1.8rem;
+    color: #ffffff;
+    margin-bottom: 12px;
 }
 
-p {
-    line-height: 1.6;
+.section-desc, .welcome-banner p {
     color: #9ca3af;
-    margin-bottom: 20px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    font-size: 1rem;
+}
+
+/* Grid Yapıları */
+.main-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+}
+
+.software-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
 }
 
 /* Kart Tasarımları */
@@ -107,60 +146,141 @@ p {
     background-color: #1f2937;
     border: 1px solid #374151;
     border-radius: 8px;
-    padding: 20px;
+    padding: 22px;
     margin-bottom: 15px;
+    position: relative;
 }
 
 .bg-glow {
-    border-left: 4px solid #f59e0b; /* Turuncu uyarı şeridi */
+    border-left: 4px solid #f59e0b;
+}
+
+.sidebar-card {
+    border: 1px solid #06b6d4;
+    background: linear-gradient(180deg, #111827 0%, #1e1b4b 100%);
+    height: 100%;
+}
+
+.sidebar-card h4 {
+    color: #06b6d4;
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+}
+
+.divider {
+    border: 0;
+    border-top: 1px solid #374151;
+    margin: 15px 0;
+}
+
+.status-text {
+    color: #10b981;
+    font-size: 0.85rem;
 }
 
 .card h3 {
     color: #38bdf8;
-    margin-bottom: 10px;
-    font-size: 1.2rem;
+    margin: 10px 0;
+    font-size: 1.25rem;
 }
 
-/* Listeler */
+.card p {
+    color: #9ca3af;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Rozetler ve Etiketler */
+.badge {
+    display: inline-block;
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+.badge-blue { background-color: #2563eb; color: #fff; }
+.badge-cyan { background-color: #0891b2; color: #fff; }
+
+.meta-date {
+    display: block;
+    font-size: 0.8rem;
+    color: #6b7280;
+    margin-top: 15px;
+}
+
+.example-tag {
+    margin-top: 15px;
+    font-size: 0.85rem;
+    color: #06b6d4;
+    font-weight: bold;
+}
+
+/* Hacklenme Uyarı Listesi */
 .warning-list {
     list-style-type: none;
 }
 
 .warning-list li {
     background-color: #1c1917;
-    border-left: 4px solid #ef4444; /* Kırmızı hack uyarısı şeridi */
-    padding: 12px;
-    margin-bottom: 10px;
-    border-radius: 0 6px 6px 0;
+    border-left: 4px solid #ef4444;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 0 8px 8px 0;
+    line-height: 1.5;
     font-size: 0.95rem;
+    color: #d1d5db;
 }
 
 .warning-list strong {
     color: #f87171;
+    display: block;
+    margin-bottom: 5px;
 }
 
-/* Grid Yapısı (Yazılımlar İçin) */
-.software-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
+/* Sızıntı Arşivi Bölümü */
+.leaks-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-.badge {
-    display: inline-block;
-    background-color: #06b6d4;
-    color: #0b0f19;
-    padding: 4px 8px;
-    font-size: 0.8rem;
-    font-weight: bold;
+.leak-item {
+    background-color: #111827;
+    border: 1px solid #1f2937;
+    border-bottom: 2px solid #3b82f6;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.leak-item h4 {
+    color: #f3f4f6;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.leak-item p {
+    color: #9ca3af;
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+}
+
+.data-row {
+    background-color: #0f172a;
+    padding: 8px 12px;
     border-radius: 4px;
-    margin-top: 10px;
+    font-family: monospace;
+    font-size: 0.85rem;
+    color: #cbd5e1;
+    margin-top: 6px;
+    border: 1px dashed #334155;
 }
 
 /* Footer */
-footer {
+.app-footer {
     text-align: center;
-    padding: 15px;
+    padding: 18px;
     background-color: #0f172a;
     border-top: 1px solid #1f2937;
     font-size: 0.85rem;
@@ -169,12 +289,12 @@ footer {
 
 /* Animasyon */
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(5px); }
+    from { opacity: 0; transform: translateY(8px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Mobil Uyum */
-@media (max-width: 600px) {
+/* Mobil Tasarım */
+@media (max-width: 768px) {
+    .main-grid, .software-grid { grid-template-columns: 1fr; }
     .main-menu { flex-direction: column; }
-    .software-grid { grid-template-columns: 1fr; }
 }
